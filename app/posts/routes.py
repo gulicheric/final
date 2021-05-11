@@ -8,8 +8,6 @@ from flask_login import (
 )
 from werkzeug.utils import secure_filename
 
-from app import bcrypt, mail
-
 from app.models import (User, Post, Comment)
 from app.forms import (LoginForm, RegistrationForm, PostForm, CommentForm)
 import pandas as pd
@@ -17,7 +15,6 @@ from datetime import datetime
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import matplotlib.pyplot as plt
 import seaborn as sns
-from flask_mail import Message
 import os
 import io
 import json
