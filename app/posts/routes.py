@@ -18,8 +18,6 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import matplotlib.pyplot as plt
 import seaborn as sns
 from flask_mail import Message
-import plotly
-import plotly.graph_objs as go
 import os
 import io
 import json
