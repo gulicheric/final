@@ -8,7 +8,7 @@ from flask_login import (
 )
 from werkzeug.utils import secure_filename
 
-from app import app, bcrypt, mail
+from app import bcrypt, mail
 
 from app.models import (User, Post, Comment)
 from app.forms import (LoginForm, RegistrationForm, PostForm, CommentForm)
