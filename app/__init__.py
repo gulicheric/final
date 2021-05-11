@@ -10,6 +10,11 @@ from flask_login import (
 )
 from flask_bcrypt import Bcrypt
 
+db = MongoEngine()
+login_manager = LoginManager()
+mail = Mail()
+bcrypt = Bcrypt()
+
 def create_app():
     app = Flask(__name__)
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
@@ -28,10 +33,11 @@ def create_app():
     )
     app.config["MONGO_URI"] ="mongodb://localhost:27017/perspect_db"
 
-    db = MongoEngine(app)
-    login_manager = LoginManager(app)
-    login_manager.login_view = "login"
-    bcrypt = Bcrypt(app)
+    db.init_app(app)
+    login_manager.init_app(app)
+    # login_manager.login_view = "login"
+
+    bcrypt.init_app(app)
 
     from app.posts.routes import posts
     from app.users.routes import users
