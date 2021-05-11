@@ -31,7 +31,8 @@ def create_app():
         SESSION_COOKIE_HTTPONLY=True,
         SESSION_COOKIE_SAMESITE="Lax",
     )
-    app.config["MONGO_URI"] = os.getenv("MONGODB_HOST")
+    app.config["MONGODB_HOST"] = os.getenv("MONGODB_HOST")
+    app.config["MONGO_URI"] ="mongodb://localhost:27017/perspect_db"
 
     db.init_app(app)
     login_manager.init_app(app)
